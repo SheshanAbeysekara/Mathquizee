@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.VolumButton{
+background-color: #6B7280; 
+width:3.5rem; 
+height: 3.25rem; 
+border-radius: 0.125rem; 
+border-width: 1px; 
+position: fixed; 
+right: 0; 
+z-index: 10; 
+margin-top: 0.5rem; 
+margin-right: 0.5rem; 
+cursor: pointer; 
+
+}
+
+.noun{
+    display: none; 
+}
+
+.main {
+    margin: 0;
+  }
+
+  .buttonclass{
+    display:inline;
+  }
+
+  .leaderboard {
+    max-width: 11%;
+  }
+
+  .mainDIV{
+    display: flex; 
+    position: fixed; 
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0; 
+    z-index: 20; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    backdrop-filter: blur(6px);
+  }
+  .modelDiv{
+    padding: 1.5rem; 
+    background-color: #ffffff; 
+    text-align: center; 
+    width: 100%; 
+    max-width: 28rem; 
+    border-radius:30px;
+  }
+  .h1Div{
+    font-size: 2.25rem;
+    line-height: 2.5rem; 
+    font-weight: 700; 
+    line-height: 1; 
+  }
+  .PDiv{
+    margin-bottom: 1rem; 
+    color: #374151; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+  }
+
+  .buttonDiv{
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem; 
+    background-color: #0061ff; 
+    color: #ffffff; 
+    font-size: 0.875rem;
+    line-height: 1.25rem; 
+    width: 100%; 
+    border-radius: 9999px; 
+  }
+
+  .buttonclass{
+      align-items: center;
+      text-align: center;
+      align-content: center;
+  }
+
+/*ProgressBar Starts*/
+  .containerY {
+    margin-left: 8rem !important;
+    background: white;
+    display: flex;
+    width: 213px;
+    height: 20px;
+    border: 1px  solid #F0DB4F;
+    margin: -2px;
+    top: 4rem;
+    left: 4rem;
+  }
+  .score {
+    display: block;
+    width: 0px;
+    background-color: yellow;
+    height: 68px !important;
+    height: 18px !important;
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+  }
+
+  .timerDisplay {
+    display: block;
+    width: 210px;
+    background-color: yellow;
+    height: 68px !important;
+    height: 18px !important;
+    -webkit-transition: 0.4s ease-out;
+    -moz-transition: 0.4s ease-out;
+    -o-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
+  }
+
+  /*ProgressBar Ends*/
+
+  /*Leaderboard*/
+  
+  .cardX {
+    min-height: 475px;
+    width: 316px;
+    margin: 1rem;
+    border-radius: 15px;
+    background: #02383C;
+    z-index: 60;
+    position: absolute;
+  }
+
+  .cardX .headerM {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ddd;
+  }
+
+  .cardX .headerM .title {
+    font-weight: 300;
+  }
+
+  .one .sort {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 14.1px;
+  }
+
+  .one .sort .day {
+    padding: 0.4rem 1.2rem;
+    margin: 0 0.1rem;
+    cursor: pointer;
+  }
+
+  .one .sort .day.active,
+  .one .sort .day:active {
+    background: rgba(210, 255, 213, 0.3);
+    border-radius: 25px;
+  }
+
+  ::selection {
+    background: rgba(210, 255, 213, 0.3);
+  }
+
+  .photo {
+    width: 75px;
+    background: #fff;
+    border-radius: 50%;
+    border: 5px solid cyan;
+    box-shadow: 0 0 20px cyan;
+    margin: 1rem 0;
+  }
+
+  .mainV {
+    width: 85px;
+  }
+
+  .profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile .person {
+    display: flex;
+    margin: 1rem 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .profile .person.first {
+    z-index: 10;
+    transform: translateY(-10%);
+  }
+
+  .first .fa-crown {
+    color: gold;
+    filter: drop-shadow(0px 0px 5px gold);
+  }
+
+  .num {
+    color: white;
+  }
+
+  .fa-caret-up {
+    color: cyan;
+    font-size: 21px;
+  }
+
+  .link {
+    margin: 0.2rem 0;
+    color: #fff;
+    margin-top: -0.3rem;
+    font-size: 13px;
+  }
+
+  .points {
+    color: cyan;
+    font-size: 18px;
+    padding-top: 4px;
+    margin-bottom: 0px;
+  }
+
+  .second {
+    margin-right: -0.7rem !important;
+  }
+
+  .third {
+    margin-left: -0.7rem !important;
+  }
+
+  .p_img {
+    width: 50px;
+    background: #fff;
+    border-radius: 50%;
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+
+  .others {
+    display: flex;
+    width: 100%;
+    margin-top: 1rem;
+    align-items: center;
+  }
+
+  .info {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 30px;
+    background: rgba(210, 255, 213, 0.3);
+  }
+
+  .info .points {
+    margin-left: 0.2rem;
+    margin-right: 1.2rem;
+  }
+
+  .info .link {
+    margin: 0 1rem;
+    font-size: 15px;
+  }
+
+  .rest {
+    padding-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  .rank {
+    display: flex;
+    align-items: center;
+    margin: 0 1rem;
+    flex-direction: column-reverse;
+  }
+
+  .rank i {
+    margin-top: -5px !important;
+  }
+
+  .rank .num {
+    margin: 0 !important;
+  }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
+  .whiteconuiatiner{
+    background-color: white;
+    padding: 50px 0px 50px 0px;
+    border-radius: 50px;
+    margin: 2rem 10rem 2rem 10rem;
+  }
+
+@media (min-width: 768px) {
+  .button-54 {
+    padding: 0.25em 0.75em;
+  }
+}
+
+.ShowState{
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CorrectShow{
+  color: rgba(56, 166, 126, 0.5);
+}
+
+
+.WrongShow{
+  color: tomato;
+}

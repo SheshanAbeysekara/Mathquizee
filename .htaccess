@@ -1,0 +1,4 @@
+Options All -Indexes
+Options +MultiViews
+
+ErrorDocument 500 "Sorry Folks.! The Inter-Galactica Server Is Down!"
