@@ -201,7 +201,7 @@ if (isset($_SESSION['userid'])) {
           </p>
           <button class="btn transparent" id="sign-up-btn">Sign Up</button>
         </div>
-        <img src="Images/undraw_mathematics_4otb.png" class="image" alt="" />
+        <img src="Images/—Pngtree—pencil compass compass calculator ruler_5368356.png" class="image" alt="" />
       </div>
 
       <div class="panel right-panel">
