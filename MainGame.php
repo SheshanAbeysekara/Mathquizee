@@ -63,10 +63,10 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             let inp = document.getElementById("input");
             var note = document.getElementById("note");
             if (inp.value == solution) {
-                note.innerHTML = 'Correct! -  <button class="button-62" onClick="newgame()" >New game?</button>';
+                note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
             } else {
                 note.innerHTML = "Not Correct!";
-                <button class="button-54" onClick="newgame()" >New game?</button>
+                
             }
         }
 
