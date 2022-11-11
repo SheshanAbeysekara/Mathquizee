@@ -11,7 +11,7 @@ class MathQuetions {
     }
 
     /**
-     * This functions represent an async function used to call the API hosted on Heokru
+     * This functions represent an async function used to call the API 
      * The function wait for the API response and Axios library functions are used to handle the API requests
      * @param {*} hashCookie 
      * @returns 
