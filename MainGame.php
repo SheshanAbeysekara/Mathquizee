@@ -118,7 +118,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 <div>
     <h2 class="h2-62" id="note">Not ready</h2>
 
-    <h2>Enter the missing digit: <input class="button-62" id="input" onchange="handleInput()" type="number" step="1" min="0" max="9"></h2>
+    <!--  <h2>Enter the missing digit: <input class="button-62" id="input" onchange="handleInput()" type="number" step="1" min="0" max="9"></h2> -->
     </div>
                     <div class="animated-text">Nintendo<div class="copy">®</div>
                     </div>
@@ -130,7 +130,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <div class="horizontal"></div>
                 </div>
                 <div class="Ebuttonclass">
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 0 </button>
+                    <button id="N0" class="button-54" onclick="handleInput(this.innerText)"> 0 </button>
                     &nbsp;
                     <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 1 </button>
                     &nbsp;
