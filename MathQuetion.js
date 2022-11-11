@@ -18,7 +18,7 @@ class MathQuetions {
      */
     getMATHQuetions = async (hashCookie) => {
         try {
-            let url = "https://math-api-app.herokuapp.com/getmathRandom/" + hashCookie;
+            let url = "http://marcconrad.com/uob/smile/api.php" + hashCookie;
             const resp = await axios.get(url);
             return resp.data;
         } catch (err) {

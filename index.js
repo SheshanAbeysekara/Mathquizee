@@ -52,11 +52,11 @@ $(document).ready(function () {
 
     $(".lang-change").on("click", function () {
         if (googTrans == '/es/en') {
-            setCookieGT("googtrans", "", 30, "/", ".http://inter-galactica.herokuapp.com/index.php");
+            setCookieGT("googtrans", "", 30, "/", ".http://mathquizee.herokuapp.com//index.php");
             setCookieGT("googtrans", "", 30, "/");
             location.reload();
         } else {
-            setCookieGT("googtrans", "/es/en", 30, "/", ".http://inter-galactica.herokuapp.com/index.php");
+            setCookieGT("googtrans", "/es/en", 30, "/", ".http://mathquizee.herokuapp.com//index.php");
             setCookieGT("googtrans", "/es/en", 30, "/");
             location.reload()
         }

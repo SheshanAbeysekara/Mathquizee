@@ -76,7 +76,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                             echo ' </div>';
                         }
                     } else {
-                        echo "Error!, Please Contact the Developer via: https://github.com/BuddhiD-Workaholic";
+                        echo "Error!, Please Contact the Developer via: https://github.com/SheshanAbeysekara";
                     }
                     ?>
                     <p><button class="abutton" onclick="confirmLogout()"><i class="las la-sign-out-alt"></i>Log out</button></p>
