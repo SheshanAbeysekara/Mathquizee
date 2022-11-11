@@ -65,7 +65,20 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             if (inp.value == solution) {
                 note.innerHTML = 'Correct! -  <button class="button-62" onClick="newgame()" >New game?</button>';
             } else {
-                note.innerHTML = "Not Correct!";
+                    Swal.fire({
+                title: 'Your answer is WRONG!!',
+                showDenyButton: true,
+                showCancelButton: true,
+                confirmButtonText: 'NEW GAME',
+                denyButtonText: `CANCEL`,
+                }).then((result) => {
+                /* Read more about isConfirmed, isDenied below */
+                if (result.isConfirmed) {
+                    newgame()
+                } else if (result.isDenied) {
+                    Swal.fire('Exit Game Triggered', '', 'info')
+                }
+                })
             }
         }
 
@@ -130,26 +143,27 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <div class="horizontal"></div>
                 </div>
                 <div class="Ebuttonclass">
-                    <button id="input" class="button-562" onclick="handleInput(this.innerText)"> 0 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 0 </button>
                     &nbsp;
-                    <button id="input" class="button-562" onclick="handleInput(this.innerText)"> 1 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 1 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 2 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 2 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 3 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 3 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 4 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 4 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 5 </button> <br>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 5 </button> <br>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 6 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 6 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 7 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 7 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 8 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 8 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 9 </button>
+                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 9 </button> <br>
                     &nbsp;
+                    
                 </div>
                 <div class="btn-AB" id=""></div>
                 <div class="btn-AB" id=""></div>
