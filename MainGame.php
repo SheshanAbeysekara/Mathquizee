@@ -130,9 +130,9 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <div class="horizontal"></div>
                 </div>
                 <div class="Ebuttonclass">
-                    <button id="N0" class="button-54" onclick="handleInput(this.innerText)"> 0 </button>
+                    <button id="input" class="button-562" onclick="handleInput(this.innerText)"> 0 </button>
                     &nbsp;
-                    <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 1 </button>
+                    <button id="input" class="button-562" onclick="handleInput(this.innerText)"> 1 </button>
                     &nbsp;
                     <button id="N0" class="button-54" onclick="ClickButton(this.innerText)"> 2 </button>
                     &nbsp;
