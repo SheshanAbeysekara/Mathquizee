@@ -65,20 +65,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             if (inp.value == solution) {
                 note.innerHTML = 'Correct! -  <button class="button-62" onClick="newgame()" >New game?</button>';
             } else {
-                    Swal.fire({
-                title: 'Your answer is WRONG!!',
-                showDenyButton: true,
-                showCancelButton: true,
-                confirmButtonText: 'NEW GAME',
-                denyButtonText: `CANCEL`,
-                }).then((result) => {
-                /* Read more about isConfirmed, isDenied below */
-                if (result.isConfirmed) {
-                    newgame()
-                } else if (result.isDenied) {
-                    Swal.fire('Exit Game Triggered', '', 'info')
-                }
-                })
+                note.innerHTML = "Not Correct!";
+                <button class="button-54" onClick="newgame()" >New game?</button>
             }
         }
 
