@@ -49,9 +49,59 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
     <!--Crypto-JS CDN-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        var quest = "";
+        var solution = -1;
+
+        let newgame = function(x) {
+           
+            startup();
+        }
+        let handleInput = function(x) {
+
+            let inp = document.getElementById("input");
+            var note = document.getElementById("note");
+            if (inp.value == solution) {
+                note.innerHTML = 'Correct! -  <button class="button-62" onClick="newgame()" >New game?</button>';
+            } else {
+                note.innerHTML = "Not Correct!";
+            }
+        }
+
+
+        let startQuest = function(data) {
+            var parsed = JSON.parse(data);
+            quest = parsed.question;
+            solution = parsed.solution;
+            let img = document.getElementById("quest");
+            img.src = quest;
+            let note = document.getElementById("note");
+            note.innerHTML = "Quest is ready.";
+        }
+
+        let fetchText = async function() {
+            let response = await fetch('https://marcconrad.com/uob/smile/api.php');
+            let data = await response.text();
+            startQuest(data);
+        }
+
+        let startup = function() {
+            fetchText();
+        }
+    </script>
+
+
+
+
 </head>
 
 <body class="">
+
+<script>
+        startup();
+    </script>
+
     <div class="container-fluid">
 
         
@@ -63,7 +113,13 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 <div class="power power-on"></div>
                 <div class="screen">
                     <div class="header">DOT MATRIX WITH STEREO SOUND</div>
-                    <img class="imgVW" id="mainImg" src="null" alt="Loading...!">
+                    <!-- <img class="imgVW" id="mainImg" src="" alt="Loading...!"> -->
+                    <img id="quest" />
+<div>
+    <h2 class="h2-62" id="note">Not ready</h2>
+
+    <h2>Enter the missing digit: <input class="button-62" id="input" onchange="handleInput()" type="number" step="1" min="0" max="9"></h2>
+    </div>
                     <div class="animated-text">Nintendo<div class="copy">®</div>
                     </div>
                 </div>
