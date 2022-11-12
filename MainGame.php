@@ -66,7 +66,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             if (inp.value == solution) {
                 note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
             } else {
-                note.innerHTML = "Not Correct!";
+                note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
                 
             }
         }
