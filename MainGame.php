@@ -118,7 +118,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <!-- <img class="imgVW" id="mainImg" src="" alt="Loading...!"> -->
                     <img id="quest" />
 <div>
-    <h2 class="h2-62" id="note">Not ready</h2>
+    
 
     <!--  <h2>Enter the missing digit: <input class="button-62" id="input" onchange="handleInput()" type="number" step="1" min="0" max="9"></h2> -->
     </div>
@@ -149,7 +149,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     &nbsp;
                     <button id="input" class="button-54" onclick="handleInput(9)"> 9 </button> <br>
                     &nbsp;
-                    
+                    <h2 class="h2-62" id="note">Not ready</h2>
                 </div>
                 <!--
                 <div class="btn-AB" id=""></div>
