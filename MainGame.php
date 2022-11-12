@@ -129,25 +129,25 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             <div class="controls-cont">
                 
                 <div class="Ebuttonclass">
-                    <button id="input" class="button-54" onclick="handleInput(0)"> 0 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(0)"> 0 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(1)"> 1 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(1)"> 1 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(2)"> 2 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(2)"> 2 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(3)"> 3 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(3)"> 3 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(4)"> 4 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(4)"> 4 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(5)"> 5 </button> <br>
+                    <button id="input" class="button-sa" onclick="handleInput(5)"> 5 </button> <br>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(6)"> 6 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(6)"> 6 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(7)"> 7 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(7)"> 7 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(8)"> 8 </button>
+                    <button id="input" class="button-sa" onclick="handleInput(8)"> 8 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(9)"> 9 </button> <br>
+                    <button id="input" class="button-sa" onclick="handleInput(9)"> 9 </button> <br>
                     &nbsp;
                     <h2 class="h2-62" id="note">Not ready</h2>
                 </div>

@@ -354,6 +354,23 @@ input.btn-hide {
   height: 24vw;
 }
 
+.button-sa {
+  background-color: #c50404; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  opacity: 0.7;
+  border-radius: 50%;
+}
+
+.button-sa:hover {opacity: 1}
+
 .button-54 {
   margin-top: 10px;
   font-family: "Open Sans", sans-serif;
