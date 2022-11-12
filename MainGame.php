@@ -20,7 +20,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="Images/Icon.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inter Galactica</title>
+    <title>MATHQUIZEE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no, shrink-to-fit=no">
     <!-- TailWindCSS
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet" /> -->
@@ -126,10 +126,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 </div>
             </div>
             <div class="controls-cont">
-                <div class="btn-direction">
-                    <div class="vertical"></div>
-                    <div class="horizontal"></div>
-                </div>
+                
                 <div class="Ebuttonclass">
                     <button id="input" class="button-54" onclick="handleInput()"> 0 </button>
                     &nbsp;
