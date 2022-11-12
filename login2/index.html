@@ -53,7 +53,7 @@
 
                 <h5>OR</h5> <br>
 
-                <div class="g-signin2"></div> <br>
+                <div class="g-signin2" data-onsuccess="onSignIn"></div> <br>
                   
                 <p class="text">
                   A Project by Sheshan Abeysekara
@@ -144,6 +144,15 @@
         </div>
       </div>
     </main>
+
+    <!-- Google Authentication Script to get user info-->
+    <script>
+      function onSignIn(googleUser) {
+        // get user profile information
+        console.log(googleUser.getBasicProfile())
+        alert("Hello There"+ googleUser.getName(),"welcome to MathQuizee");
+      }
+    </script>
 
     <!-- Javascript file -->
 
