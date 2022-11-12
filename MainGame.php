@@ -113,7 +113,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             <div class="screen-cont">
                 <div class="power power-on"></div>
                 <div class="screen">
-                    <div class="header">DOT MATRIX WITH STEREO SOUND</div>
+                    <div class="header">MATH IS FUN AND NICE!</div>
                     <!-- <img class="imgVW" id="mainImg" src="" alt="Loading...!"> -->
                     <img id="quest" />
 <div>
@@ -121,7 +121,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
     <!--  <h2>Enter the missing digit: <input class="button-62" id="input" onchange="handleInput()" type="number" step="1" min="0" max="9"></h2> -->
     </div>
-                    <div class="animated-text">Nintendo<div class="copy">®</div>
+                    <div class="animated-text">MATHQUIZEE<div class="copy">®</div>
                     </div>
                 </div>
             </div>
@@ -131,28 +131,29 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <div class="horizontal"></div>
                 </div>
                 <div class="Ebuttonclass">
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 0 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 0 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 1 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 1 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 2 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 2 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 3 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 3 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 4 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 4 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 5 </button> <br>
+                    <button id="input" class="button-54" onclick="handleInput()"> 5 </button> <br>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 6 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 6 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 7 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 7 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 8 </button>
+                    <button id="input" class="button-54" onclick="handleInput()"> 8 </button>
                     &nbsp;
-                    <button id="input" class="button-54" onclick="handleInput(this.innerText)"> 9 </button> <br>
+                    <button id="input" class="button-54" onclick="handleInput()"> 9 </button> <br>
                     &nbsp;
                     
                 </div>
+                <!--
                 <div class="btn-AB" id=""></div>
                 <div class="btn-AB" id=""></div>
                 <button class="btn-start-select" onclick="pauseBtn()"></button>
@@ -160,7 +161,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 <button style="left: 28.6vw; display: none;" id="soundOffEl" class="btn-start-select">On</button>
                 <button style="left: 28.6vw; display: block;" id="soundOnEl" class="btn-start-select noun">Off</button>
                 <span style="left: 28.6vw;" class="textBtn-select">Game Sound</span>
-                <div id="speakerImg" class="speakers noun"></div>
+                <div id="speakerImg" class="speakers noun"></div> -->
             </div>
         </div>
         <div class="mainDIV" id="modalEl" style="display: none;">
