@@ -123,19 +123,7 @@ if (isset($_SESSION['userid'])) {
                   <label>YOUR PASSWORD</label>
                 </div>
 
-                <div class="input-wrap">
-                  <input
-                    type="password"
-                    id="pwd"
-                    name="pwd"
-                    class="input-field"
-                    autocomplete="off"
-                    required
-                  />
-                  <label>CONFIRM PASSWORD</label>
-                </div>
-
-                <input type="submit" name="submit" value="Login" class="sign-btn" />
+                  <input type="submit" name="submit" value="Login" class="sign-btn" />
 
                 <h5>OR</h5> <br>
 
