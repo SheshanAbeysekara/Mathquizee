@@ -16,7 +16,7 @@ class UserLogin
     public function initUser()
     {
         if ($this->emptyInputLogin($this->username, $this->pwd) == true) {
-            header("Location: ../index.php?error=empty");
+            header("Location: ../newindex.php?error=empty");
             exit();
         } else {
             $this->loginFun($this->con, $this->username, $this->pwd);
@@ -47,7 +47,7 @@ class UserLogin
         $stmt = mysqli_stmt_init($con);
 
         if (!mysqli_stmt_prepare($stmt, $sql1)) {
-            header("Location: ../index.php?error=sqlerror&E=" . mysqli_error($con));
+            header("Location: ../newindex.php?error=sqlerror&E=" . mysqli_error($con));
         }
         mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
@@ -67,7 +67,7 @@ class UserLogin
     {
         $uidExists = $this->UidExistsFunction($con, $username);
         if ($uidExists === false) {
-            header("Location: ../index.php?error=wronglogin");
+            header("Location: ../newindex.php?error=wronglogin");
         }
 
         $pwdHashed = $uidExists['password'];
@@ -81,7 +81,7 @@ class UserLogin
             $this->UpdateStatusLogIn($uidExists['email'], $con);
             header("Location: ../MainGame.php");
         } else {
-            header("Location: ../index.php?error=wronglogin");
+            header("Location: ../newindex.php?error=wronglogin");
         }
     }
 }

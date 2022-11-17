@@ -14,7 +14,7 @@ function UidExists($con, $username)
 	$stmt = mysqli_stmt_init($con);
 
 	if (!mysqli_stmt_prepare($stmt, $sql)) {
-		header("Location: ../index.php?error=sqlerror&E=" . mysqli_error($con));
+		header("Location: ../newindex.php?error=sqlerror&E=" . mysqli_error($con));
 	}
 	mysqli_stmt_bind_param($stmt, "s", $username);
 	mysqli_stmt_execute($stmt);

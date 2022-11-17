@@ -71,10 +71,10 @@ if (isset($_SESSION['userid'])) {
                 <div class="input-wrap">
                   <input
                     type="text"
-                    minlength="4"
+                    id="Uname"
+                    name="Uname"
                     class="input-field"
                     autocomplete="off"
-                    id="Uname"
                     required
                   />
                   <label>YOUR USERNAME</label>
@@ -83,16 +83,16 @@ if (isset($_SESSION['userid'])) {
                 <div class="input-wrap">
                   <input
                     type="password"
-                    minlength="4"
+                    id="pwd"
+                    name="pwd"
                     class="input-field"
                     autocomplete="off"
-                    id="pwd"
                     required
                   />
                   <label>YOUR PASSWORD</label>
                 </div>
 
-                <input type="submit" value="Sign In" class="sign-btn" />
+                <input type="submit" name="submit" value="Login" class="sign-btn" />
 
                 <h5>OR</h5> <br>
 
