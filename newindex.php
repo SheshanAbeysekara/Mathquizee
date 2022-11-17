@@ -95,19 +95,6 @@ if (isset($_SESSION['userid'])) {
                     autocomplete="off"
                     required
                   />
-                  <label>YOUR NAME</label>
-                </div>
-
-              <div class="actual-form">
-                <div class="input-wrap">
-                  <input
-                    type="text"
-                    id="Uname"
-                    name="Uname"
-                    class="input-field"
-                    autocomplete="off"
-                    required
-                  />
                   <label>YOUR EMAIL</label>
                 </div>
 
@@ -180,6 +167,17 @@ if (isset($_SESSION['userid'])) {
                     required
                   />
                   <label>Password</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Confirm Password</label>
                 </div>
 
                 <input type="submit" value="Sign Up" class="sign-btn" />
