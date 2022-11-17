@@ -98,7 +98,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
 </head>
 
-<body class="">
+<body class="notClickable">
 
 <script>
         startup();
@@ -106,7 +106,37 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
     <div class="container-fluid">
 
-        
+    <div class="rightSi">
+            <div class="textContainer">
+                <span class="textConi">Time Left: <br><i id="time">0</i> Sec</span>
+                <div class="containerY">
+                    <div class="timerDisplay"></div>
+                </div>
+            </div>
+            <div style="margin-top: 1.4rem; padding:1rem !important" class="textContainer">
+                <div class="Prfilescard">
+                    <?php
+                    $sqlQ1 = "SELECT * FROM `player` WHERE email='" . $_SESSION["userid"] . "'";
+                    $results1 = mysqli_query($con, $sqlQ1);
+                    if (mysqli_num_rows($results1) > 0) {
+                        while ($rowW = mysqli_fetch_assoc($results1)) {
+                            echo '<img src="' . $rowW['img'] . '" alt="Error Loading the Image" class="avatar">';
+                            echo ' <h3 style="margin-bottom: 18px;">' . $rowW['name'] . '</h3>';
+                            echo '<div style="margin-top: 0px;">';
+                            echo ' <p class="TEXTp"><b><i class="fa-solid fa-circle-envelope"></i> Email: </b>' . $rowW['email'] . '</p>
+        <p class="TEXTp"><b><i class="fa-solid fa-circle-phone"></i> TP Number: </b>' . $rowW['contact'] . '</p>
+        <p id="LevelUser" class="TEXTp"><b><i class="fa-solid fa-star"></i> Level: </b>' . $rowW['level'] . '</p>
+        <p id="XpUser" class="TEXTp"><b><i class="fa-solid fa-star"></i> XP: </b>' . $rowW['Xp'] . '</p>';
+                            echo ' </div>';
+                        }
+                    } else {
+                        echo "Error!, Please Contact the Developer via: https://github.com/SheshanAbeysekara";
+                    }
+                    ?>
+                    <p><button class="abutton" onclick="confirmLogout()"><i class="las la-sign-out-alt"></i>Log out</button></p>
+                </div>
+            </div>
+        </div>
 
         
 
@@ -114,7 +144,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             <div class="screen-cont">
                 <div class="power power-on"></div>
                 <div class="screen">
-                    <div class="header">MATH IS FUN AND NICE!</div>
+                    <div class="header">A Game by Sheshan Abeysekara</div>
                     <!-- <img class="imgVW" id="mainImg" src="" alt="Loading...!"> -->
                     <img id="quest" />
 <div>
