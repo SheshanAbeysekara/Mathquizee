@@ -1,3 +1,15 @@
+<?php require_once 'DataBase/config.php';
+require_once 'Includes/GoogleAPI/vendor/autoload.php';
+require_once("Includes/GoogleController.php");
+
+if (isset($_SESSION['userid'])) {
+  if ($_SESSION['userTY'] == "GP") {
+    header("Location: MainGame.php");
+  }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,13 +20,42 @@
     <script src="https://apis.google.com/js/platform.js" async defer> </script>
     <title>MATHQUIZEE</title>
     <link rel="stylesheet" href="newindexstyle.css" />
+
+    <!--FontAwsome CDN-->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+
+  <!--Jquery CDN-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!--Google translate-->
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!--SweetAlert CDN-->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!--Axios CDN-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <Script>//Login 
+    function validateLogin() {
+      if ((document.getElementById("Uname").value != "") && (document.getElementById("pwd").value != "")) {
+        return true;
+      } else {
+        swal("Please insert the Login credentials!");
+        return false;
+      }
+    }
+    
+    </Script>
   </head>
   <body>
     <main>
       <div class="box">
         <div class="inner-box">
           <div class="forms-wrap">
-            <form action="https://mathquizee.herokuapp.com/MainGame.php" autocomplete="off" class="sign-in-form"  >
+            <form action="Includes/login.inc.php" onsubmit="return validateLogin()" autocomplete="off" class="sign-in-form" method="POST"  >
               <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h1>MATHQUIZEE</h1>
@@ -33,6 +74,7 @@
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    id="Uname"
                     required
                   />
                   <label>YOUR USERNAME</label>
@@ -44,6 +86,7 @@
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    id="pwd"
                     required
                   />
                   <label>YOUR PASSWORD</label>
