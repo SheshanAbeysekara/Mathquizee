@@ -98,7 +98,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
 </head>
 
-<body class="notClickable">
+<body class="">
 
 <script>
         startup();
