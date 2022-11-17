@@ -53,13 +53,20 @@ if (isset($_SESSION['userid'])) {
     </Script>
   </head>
   <body>
-    <script> function googleTranslateElementInit(){
-      new google.translate.TranslateElement(
-        {pageLanguage: 'en'},
-        'google_translate_element'
-      );
-    }
-    
+    <script>
+
+      var duplicate_google_translate_counter = 0;//this stops google adding button multiple times
+
+        function googleTranslateElementInit(){
+          if (duplicate_google_translate_counter == 0) {
+              new google.translate.TranslateElement(
+              {pageLanguage: 'en'},
+              'google_translate_element'
+            );
+         }
+          duplicate_google_translate_counter++;
+        }
+
     </script>
   
     <main>
