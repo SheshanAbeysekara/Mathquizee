@@ -35,7 +35,7 @@ input.btn-hide {
   position: absolute;
   width: 100%;
   height: 31px; 
-  border-bottom: 4px solid #e0e0e0;
+  border-bottom: 4px solid #7e7c05;
 }
 .gameboy:after {
   content: "";
@@ -43,8 +43,8 @@ input.btn-hide {
   top: 0;
   width: 50vw;
   height: 31px;
-  border-left: 4px solid #e0e0e0;
-  border-right: 4px solid #e0e0e0;
+  border-left: 4px solid #d5f009;
+  border-right: 4px solid #d5f009;
   margin-left: 40px;
   margin-right: 40px;
 }
