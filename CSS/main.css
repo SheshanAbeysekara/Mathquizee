@@ -6,7 +6,7 @@
 }
 
 body{
-  background-color: #1E0555;
+  background-color: #600404;
 }
 
 input.btn-on,
@@ -435,7 +435,7 @@ input.btn-hide {
 }
 
 .textContainer{
-  border: 2px solid #F0DB4F;
+  border: 2px solid #beffc4;
   align-items: center;
   outline: none;
   text-align: center;

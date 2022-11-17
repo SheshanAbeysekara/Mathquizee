@@ -8,7 +8,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     }
     $_SESSION["TimeOut"] = time();
 } else {
-    header("Location: ../index.php");
+    header("Location: ../newindex.php");
 }
 
 $FuntionName = $_POST["FuntionName"];

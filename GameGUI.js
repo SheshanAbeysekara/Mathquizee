@@ -88,8 +88,8 @@ async function pauseBtn() {
 
 function confirmLogout() {
     swal({
-        title: "Do you wish to Logout?",
-        text: "Your learning MATHs!. So, Why leave?",
+        title: "Are you sure you want to log out?",
+        text: "Mathquizee is going to miss you!",
         icon: "warning",
         buttons: true,
         dangerMode: true,

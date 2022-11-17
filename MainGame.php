@@ -98,7 +98,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
 </head>
 
-<body class="">
+<body class="notClickable">
 
 <script>
         startup();
@@ -107,12 +107,12 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     <div class="container-fluid">
 
     <div class="rightSi">
-            <div class="textContainer">
+            <!-- <div class="textContainer">
                 <span class="textConi">Time Left: <br><i id="time">0</i> Sec</span>
                 <div class="containerY">
                     <div class="timerDisplay"></div>
                 </div>
-            </div>
+            </div> -->
             <div style="margin-top: 1.4rem; padding:1rem !important" class="textContainer">
                 <div class="Prfilescard">
                     <?php
@@ -123,10 +123,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                             echo '<img src="' . $rowW['img'] . '" alt="Error Loading the Image" class="avatar">';
                             echo ' <h3 style="margin-bottom: 18px;">' . $rowW['name'] . '</h3>';
                             echo '<div style="margin-top: 0px;">';
-                            echo ' <p class="TEXTp"><b><i class="fa-solid fa-circle-envelope"></i> Email: </b>' . $rowW['email'] . '</p>
-        <p class="TEXTp"><b><i class="fa-solid fa-circle-phone"></i> TP Number: </b>' . $rowW['contact'] . '</p>
-        <p id="LevelUser" class="TEXTp"><b><i class="fa-solid fa-star"></i> Level: </b>' . $rowW['level'] . '</p>
-        <p id="XpUser" class="TEXTp"><b><i class="fa-solid fa-star"></i> XP: </b>' . $rowW['Xp'] . '</p>';
+                            echo ' <p class="TEXTp"><b><i class="fa-solid fa-circle-envelope"></i> Email: </b>' . $rowW['email'] . '</p>';
+        
                             echo ' </div>';
                         }
                     } else {
