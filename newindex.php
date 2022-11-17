@@ -47,10 +47,21 @@ if (isset($_SESSION['userid'])) {
         return false;
       }
     }
+
+    
     
     </Script>
   </head>
   <body>
+    <script> function googleTranslateElementInit(){
+      new google.translate.TranslateElement(
+        {pageLanguage: 'en'},
+        'google_translate_element'
+      );
+    }
+    
+    </script>
+  
     <main>
       <div class="box">
         <div class="inner-box">
@@ -102,6 +113,7 @@ if (isset($_SESSION['userid'])) {
                   A Project by Sheshan Abeysekara
                   <a href="https://github.com/SheshanAbeysekara/Mathquizee">View Source Code!</a> 
                 </p>
+                <div id="google_translate_element"></div>
               </div>
             </form>
 
