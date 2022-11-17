@@ -188,6 +188,7 @@ if (isset($_SESSION['userid'])) {
                   <a href="#">Privacy Policy</a>
                 </p> -->
               </div>
+              <div id="google_translate_element"></div>
             </form>
           </div>
 
