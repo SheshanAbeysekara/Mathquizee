@@ -95,7 +95,20 @@ if (isset($_SESSION['userid'])) {
                     autocomplete="off"
                     required
                   />
-                  <label>YOUR USERNAME</label>
+                  <label>YOUR NAME</label>
+                </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    type="text"
+                    id="Uname"
+                    name="Uname"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>YOUR EMAIL</label>
                 </div>
 
                 <div class="input-wrap">
@@ -108,6 +121,18 @@ if (isset($_SESSION['userid'])) {
                     required
                   />
                   <label>YOUR PASSWORD</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="password"
+                    id="pwd"
+                    name="pwd"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>CONFIRM PASSWORD</label>
                 </div>
 
                 <input type="submit" name="submit" value="Login" class="sign-btn" />
@@ -207,14 +232,14 @@ if (isset($_SESSION['userid'])) {
       </div>
     </main>
 
-    <!-- Google Authentication Script to get user info-->
+    <!-- Google Authentication Script to get user info
     <script>
       function onSignIn(googleUser) {
         // get user profile information
         console.log(googleUser.getBasicProfile())
         alert("Hello There"+ googleUser.getName(),"welcome to MathQuizee");
       }
-    </script>
+    </script> -->
 
     <!-- Javascript file -->
 
