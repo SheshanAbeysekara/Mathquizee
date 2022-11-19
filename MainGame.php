@@ -73,11 +73,20 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             var note = document.getElementById("note");
             if (inp.value == solution) {
                 note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
-                swal("Yaaaay!", "You are a MATH genius!", "success");
+                swal("Yaaaay!", "You are a MATH genius!", "success").then(function(confirmed) {
+                    if(confirmed) {
+                        newgame()
+                    }
+                });
+                
                 
             } else {
                 note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
-                swal("OOPS!", "Wrong Answer :(", "error");
+                swal("OOPS!", "Wrong Answer :(", "error").then(function(confirmed) {
+                    if(confirmed) {
+                        newgame()
+                    }
+                });
                 
                 
             }
