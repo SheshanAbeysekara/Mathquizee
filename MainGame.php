@@ -82,7 +82,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 
                 
             }
-        }
+        
+    
 
 
         let startQuest = function(data) {
