@@ -14,8 +14,7 @@ class MathImages {
     }
 
     /**
-     * This functions represent an async function used to call the API hosted on marcconrad.com
-     * The function wait for the API response and Axios library functions are used to handle the API requests
+    
      * @param {*} hashCookie 
      * @returns the response recived from the API or an error message
      */

@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
 
 			$uidExists = UidExists($con, $email);
 			if ($uidExists === false) {
-				header("Location: ../index.php?error=wronglogin");
+				header("Location: ../newindex.php?error=wronglogin");
 			}
 			session_start();
 			$_SESSION["userid"] = $uidExists['email'];
@@ -67,11 +67,11 @@ if (isset($_POST['submit'])) {
 			UpdateStatusLogIn($uidExists['email'], $con);
 			header("Location: ../MainGame.php");
 		} catch (Exception $e) {
-			header("Location: ../index.php?error=exception&E=" . $e);
+			header("Location: ../newindex.php?error=exception&E=" . $e);
 		}
 	} else {
-		header("Location: ../index.php?error=error");
+		header("Location: ../newindex.php?error=error");
 	}
 } else {
-	header("Location:../index.php?error=empty");
+	header("Location:../newindex.php?error=empty");
 }

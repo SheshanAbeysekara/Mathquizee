@@ -1,10 +1,13 @@
 //USER Cookie
+//examples from: https://www.w3schools.com/js/js_cookies.asp
+
 function setCookie(exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = "expires=" + d.toUTCString();
     document.cookie = "CookeisAPIS=XYZ-" + Math.random() + "-ABC-" + d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000) + ";" + expires + ";path=/;";
 }
+
 
 function getCookie(cname) {
     let name = cname + "=";

@@ -1,3 +1,7 @@
+<!-- This PHP page defines and displays both the Sign-In and Sign-Up window details on the client browser.
+All user inputs are validated with functions, upon which the data are transferred to the Database.
+A Project by Sheshan Abeysekara for Computer Integrated Module of UOB. Registration ID: 2211344 -->
+
 <?php require_once 'DataBase/config.php';
 require_once 'Includes/GoogleAPI/vendor/autoload.php';
 require_once("Includes/GoogleController.php");
@@ -9,6 +13,8 @@ if (isset($_SESSION['userid'])) {
 }
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -37,8 +43,10 @@ if (isset($_SESSION['userid'])) {
 
   <!--Axios CDN-->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  
 
-  <Script>//Login 
+  <Script>
+  //LoginWindow Validate FunctionS
     function validateLogin() {
       if ((document.getElementById("Uname").value != "") && (document.getElementById("pwd").value != "")) {
         return true;
@@ -48,7 +56,77 @@ if (isset($_SESSION['userid'])) {
       }
     }
 
-    
+
+    //RegistrationWindow Validate FunctionS
+
+    //Validate Password/s
+    function ValidatePassword() {
+      var pwd1 = document.getElementById("pwd").value;
+      var pwdc = document.getElementById("pwdc").value;
+
+      if ((pwd1.length >= 8) && (pwd1.length <= 10)) {
+        if(pwd1 == pwdc){
+          return true;
+        }else{
+          swal("Your passowrds don't match!, Please try again later!");
+          return false;
+        }
+      } else {
+        swal("Please enter the correct password with Minimum of 8 charcters and Maximum of 10 Characters");
+        return false;
+      }
+    }
+
+    //validate Email via APILAYER API.
+    const validateEmail = async () => {
+      var email = document.getElementById("email").value;
+      try {
+        var url = "http://apilayer.net/api/check?access_key=e4bfccb27a838acc91c7bf0e8957713f&email=" + email
+        const resp = await axios.get(url);
+        return resp;
+      } catch (err) {
+        console.log(err);
+        return (err);
+      }
+    }
+
+    //Validate Phone numer via numlookupAPI.
+    const validatePhone = async () => {
+      var CPno = document.getElementById("contact").value;
+      try {
+        let url = "https://numlookupapi.com/api/validate/" + CPno+"?apikey=pLWWIdzxTymJ9PSs7WQfg3KDOqMFv4EMgI7MLv8O";
+        const resp = await axios.get(url);
+        return resp.data;
+      } catch (err) {
+        console.log(err);
+        return (err);
+      }
+    }
+
+    //SignUp Validation
+    async function validateAll(e) {
+      //Email validation 
+      validateEmail().then(response => {
+        console.log("Email validation: "+response.format_valid, " : ", response.mx_found);
+        if ((response.format_valid) && (response.smtp_check)&& (response.mx_found)) {
+          if (ValidatePassword()) {
+            //Phone number validation 
+            validatePhone().then(response => {
+              console.log("Number validation: "+response.valid, " : ", response.international_format);
+              if ((response.valid)) {
+                e.submit();
+              } else {
+                swal("The Phone number you entered is not a valid number! \n Make sure your have added your country code at the begining: +94 XX XXXXXX");
+              }
+            })
+          } else {
+            e.preventDefault();
+          }
+        } else {
+          swal("The email you entered is not a valid email! \n You need to have a Valid Email Address!");
+        }
+      })
+    }
     
     </Script>
   </head>
@@ -78,7 +156,7 @@ if (isset($_SESSION['userid'])) {
                 <img src="./img/logo.png" alt="easyclass" />
                 <h1>MATHQUIZEE</h1>
               </div>
-
+              
               <div class="heading">
                 <h2>Hello There!</h2>
                 <h6>Not registered yet?</h6> <br>
@@ -124,12 +202,15 @@ if (isset($_SESSION['userid'])) {
               </div>
             </form>
 
-            <form action="https://mathquizee.herokuapp.com/MainGame.php" autocomplete="off" class="sign-up-form">
+            <form action="Includes/signup.inc.php" autocomplete="off" onsubmit="return validateAll(this); return false;" method="POST" class="sign-up-form">
               <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h1>MATHQUIZEE</h1>
               </div>
+              
 
+              <!-- Sign UP FORM -->
+        
               <div class="heading">
                 <h2>Get Started</h2>
                 <h6>Already have an account?</h6>
@@ -143,6 +224,7 @@ if (isset($_SESSION['userid'])) {
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    id="name" name="name"
                     required
                   />
                   <label>Name</label>
@@ -153,9 +235,21 @@ if (isset($_SESSION['userid'])) {
                     type="email"
                     class="input-field"
                     autocomplete="off"
+                    id="email" name="email"
                     required
                   />
                   <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    type="tel"
+                    class="input-field"
+                    autocomplete="off"
+                    id="contact" name="contact"
+                    required
+                  />
+                  <label>Phone Number</label>
                 </div>
 
                 <div class="input-wrap">
@@ -164,6 +258,7 @@ if (isset($_SESSION['userid'])) {
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    required id="pwd1" name="pwd"
                     required
                   />
                   <label>Password</label>
@@ -175,12 +270,13 @@ if (isset($_SESSION['userid'])) {
                     minlength="4"
                     class="input-field"
                     autocomplete="off"
+                    required id="pwdc" name="pwdc"
                     required
                   />
                   <label>Confirm Password</label>
                 </div>
 
-                <input type="submit" value="Sign Up" class="sign-btn" />
+                <input type="submit" name="submit" value="Sign Up" class="sign-btn" />
                   <!--
                 <p class="text">
                   By signing up, I agree to the
@@ -190,7 +286,7 @@ if (isset($_SESSION['userid'])) {
               </div>
               
             </form>
-            <div id="google_translate_element"></div>
+            
           </div>
 
           <div class="carousel">
