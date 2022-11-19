@@ -50,7 +50,7 @@ class UserSingup extends UserLogin
         return ($result);
     }
 
-    //Gravtar Img API implimenation
+    //Gravtar Img API implimenation. See: https://en.gravatar.com/site/implement/images/
     private function get_gravatar_url($email)
     {
         $address = strtolower(trim($email));

@@ -2,3 +2,6 @@ Options All -Indexes
 Options +MultiViews
 
 ErrorDocument 500 "We are Sorry! The Mathquizee hosted Heroku Server Is Down"
+
+#Alternate default index page
+DirectoryIndex newindex.php
