@@ -72,7 +72,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             let inp = document.getElementById("input");
             var note = document.getElementById("note");
             if (inp.value == solution) {
-                note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+                //note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
                 swal("Yaaaay!", "You are a MATH genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
@@ -81,7 +81,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 
                 
             } else {
-                note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+                //note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
                 swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
@@ -100,7 +100,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             let img = document.getElementById("quest");
             img.src = quest;
             let note = document.getElementById("note");
-            note.innerHTML = "Quest is ready.";
+            note.innerHTML = "Quiz is ready.";
         }
 
         let fetchText = async function() {
