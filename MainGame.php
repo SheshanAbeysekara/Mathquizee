@@ -72,11 +72,14 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             let inp = document.getElementById("input");
             var note = document.getElementById("note");
             if (inp.value == solution) {
-                note.innerHTML = 'Correct!';
+                note.innerHTML = 'Correct!'; //-  <button class="button-54" onClick="newgame()" >New game?</button>'
                 
             } else {
-                note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
-                header("Location:../MainGame.php?error=wrong");
+                //note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+                
+                <?php
+                header("Location: MainGame.php?error=wrong");
+                ?>
                 
             }
         }
