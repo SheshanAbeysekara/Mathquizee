@@ -72,9 +72,11 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             let inp = document.getElementById("input");
             var note = document.getElementById("note");
             if (inp.value == solution) {
-                note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+                note.innerHTML = 'Correct!';
+                
             } else {
                 note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+                header("Location:../MainGame.php?error=wrong");
                 
             }
         }
@@ -216,12 +218,13 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
     <!--JS Class-->
     <script src="./Cookie.js"></script>
+    <!--
     <script src="./Level.js"></script>
     <script src="./MathQuetion.js"></script>
     <script src="./MathImage.js"></script>
     <script src="./Player.js"></script>
     <script src="./GameEngine.js"></script>
-    <script src="./Game.js"></script>
+    <script src="./Game.js"></script> -->
 
     <!--Main JS-->
     <script src="./AjaxFunctions.js"></script>
@@ -244,4 +247,17 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
       <div></div>
     </div>
 
-  </div></div></div></div></body></html>
+  </div></div></div></div>
+
+
+  <?php
+  if (isset($_GET['error'])) {
+    if ($_GET['error'] == "wrong") {
+      echo '<script>swal("OOPS!", "Wrong Answer :(", "error");</script>';
+    } else {
+      echo '<script>swal("Yaaaay!", "You are a MATH genius!", "success");</script>';
+    } 
+  }
+  ?>
+  
+</body></html>

@@ -12,12 +12,12 @@ if (isset($_POST['submit'])) {
 	require_once("./UserSingup.classes.php");
 
 	/**
-	 * Creating a Object from the class UserSingup which gonna contain all the information the user inserterd when signing up
+	 * Creating a Object from the class UserSingup which is going to  contain all the information the user insertered when signing up
 	 */
 	$signup = new UserSingup($con, $pwd, $email, $name, $Tel, $pwdrepeat);
 	$signup->initUser();
 
-	header("Location:../index.php?error=none");
+	header("Location:../newindex.php?error=none");
 } else {
 	header("Location:../index");
 }

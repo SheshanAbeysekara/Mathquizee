@@ -202,14 +202,16 @@ if (isset($_SESSION['userid'])) {
               </div>
             </form>
 
+
+            <!-- Sign UP FORM -->
+
+
             <form action="Includes/signup.inc.php" autocomplete="off" onsubmit="return validateAll(this); return false;" method="POST" class="sign-up-form">
               <div class="logo">
                 <img src="./img/logo.png" alt="easyclass" />
                 <h1>MATHQUIZEE</h1>
               </div>
-              
-
-              <!-- Sign UP FORM -->
+                       
         
               <div class="heading">
                 <h2>Get Started</h2>
@@ -328,5 +330,43 @@ if (isset($_SESSION['userid'])) {
     <!-- Javascript file -->
 
     <script src="app.js"></script>
+
+    <?php
+  if (isset($_GET['error'])) {
+    if ($_GET['error'] == "empty") {
+      echo '<script>swal("Error!", "Please Fill the inputs!", "error");</script>';
+    } elseif ($_GET['error'] == "wronglogin") {
+      echo '<script>swal("Error!", "Your username or Password is invalid!", "error");</script>';
+    } elseif ($_GET['error'] == "Invaild") {
+      echo '<script>swal("Error!", Invalid User Type!", "error");</script>';
+    } elseif ($_GET['error'] == "none") {
+      echo '<script>swal("Welcome to MATHQUIZEE!", "Please sign-in to enjoy our game!", "success");</script>';
+    } elseif ($_GET['error'] == "uidexists") {
+      echo '<script>swal("Error!", "This email already has an Account! <br> Try Sign In!", "error");</script>';
+    } elseif ($_GET['error'] == "sqlerror") {
+      echo '<script>swal("Error!", "SQL error: ' . $_GET['E'] . '", "error");</script>';
+    } elseif ($_GET['error'] == "exception") {
+      echo '<script>swal("Error!", "Error has occurerd!, error: ' . $_GET['E'] . '", "error");</script>';
+    } else {
+      echo '<script>swal("Error!", "Unknown Error!, Please try again later!", "error");</script>';
+    } 
+  }
+  ?>
+  <!--JavaScript-->
+  <script>
+    const sign_in_btn = document.querySelector("#sign-in-btn");
+    const sign_up_btn = document.querySelector("#sign-up-btn");
+    const container = document.querySelector(".container");
+
+    sign_up_btn.addEventListener("click", () => {
+      container.classList.add("sign-up-mode");
+    });
+
+    sign_in_btn.addEventListener("click", () => {
+      container.classList.remove("sign-up-mode");
+    });
+  </script>
+  <script src="./index.js"></script>
+  
   </body>
 </html>

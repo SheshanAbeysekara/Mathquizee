@@ -25,15 +25,15 @@ class UserSingup extends UserLogin
     public function initUser()
     {
         if ($this->emptyInputSignup($this->name, $this->email, $this->pwd, $this->pwdrepeat, $this->Tel) !== false) {
-            header("Location:../index.php?error=empty");
+            header("Location:../newindex.php?error=empty");
             exit();
         }
         if ($this->UidExistsFunction($this->con, $this->email) !== false) {
-            header("Location:../index.php?error=uidexists");
+            header("Location:../newindex.php?error=uidexists");
             exit();
         }
         if ($this->pwdMatch($this->pwd, $this->pwdrepeat) !== false) {
-            header("Location:../index.php?error=pwdmismatch");
+            header("Location:../newindex.php?error=pwdmismatch");
             exit();
         }
         $this->createUser($this->con, $this->email, $this->name, $this->Tel, $this->pwd);
@@ -64,7 +64,7 @@ class UserSingup extends UserLogin
         $stmt = mysqli_stmt_init($con);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
-            header("Location:../index.php?error=stmtfailed");
+            header("Location:../newindex.php?error=stmtfailed");
             exit();
         }
 
