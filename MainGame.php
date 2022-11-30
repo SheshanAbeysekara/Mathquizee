@@ -62,60 +62,9 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     <!--Crypto-JS CDN
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-    <script>
-        var quest = "";
-        var solution = -1;
-
-        let newgame = function(x) {
-           
-            startup();
-        }
-        let handleInput = function(x) {
-
-            let inp = document.getElementById("input");
-            var note = document.getElementById("note");
-            if (inp.value == solution) {
-                //note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
-                swal("Yaaaay!", "You are a MATH genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
-                    if(confirmed) {
-                        newgame()
-                    }
-                });
-                
-                
-            } else {
-                //note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
-                swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
-                    if(confirmed) {
-                        newgame()
-                    }
-                });
-                
-                
-            }
-        }
-
-
-        let startQuest = function(data) {
-            var parsed = JSON.parse(data);
-            quest = parsed.question;
-            solution = parsed.solution;
-            let img = document.getElementById("quest");
-            img.src = quest;
-            let note = document.getElementById("note");
-            note.innerHTML = "Quiz is ready.";
-        }
-
-        let fetchText = async function() {
-            let response = await fetch('https://marcconrad.com/uob/smile/api.php');
-            let data = await response.text();
-            startQuest(data);
-        }
-
-        let startup = function() {
-            fetchText();
-        }
-    </script>
+    
+    <!--Importing Smile APIL Quiz functions-->
+    <script src="quizenginge.js"></script>
 
 
 
