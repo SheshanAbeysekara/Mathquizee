@@ -50,12 +50,12 @@ GetUserData().then(response => {
  */
 async function main() {
     GameEngingObj = new GameEngine(GameUserData, parseInt(GameUserData.Xp), parseInt(GameUserData.level), parseInt(GameData.CurentLevel.time_allocated), parseInt(GameData.CurentLevel.PlusScore), parseInt(GameData.CurentLevel.MinusScore));   //Player details as a object/ Score/ Lavel 
-    updateScore(GameEngingObj.score);
+    /** updateScore(GameEngingObj.score); */
     clearInterval(timeeIntervel);
     gameTimer(GameEngingObj.time);
-    currentGame = await GameEngingObj.nextMathImageGame();
-    startGameAudioP2.play();
-    ImagURLQuestion(currentGame);
+    /** currentGame = await GameEngingObj.nextMathImageGame(); */
+    /** startGameAudioP2.play(); */
+    /** ImagURLQuestion(currentGame);*/
 }
 
 function updateScore(score) {
@@ -111,12 +111,14 @@ function gameTimer(timeleft) {
         timeleft -= 1;
         timer.innerHTML = timeleft;
         if (timeleft == 0) {
-            endGameAudio.play();
+            var wronganswer = new Audio('./audio/wrong.wav');
+            wronganswer.play();
             clearInterval(timeeIntervel);
             gameTimer(GameEngingObj.time);
-            updateScore(GameEngingObj.NoAnswerScore());
-            currentGame = await GameEngingObj.nextMathImageGame();
-            ImagURLQuestion(currentGame);
+            //updateScore(GameEngingObj.NoAnswerScore());
+            //currentGame = await GameEngingObj.nextMathImageGame();
+            //ImagURLQuestion(currentGame);
+            newgame()
         }
     }, 1000);
 }
