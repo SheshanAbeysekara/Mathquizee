@@ -225,6 +225,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <button id="input" class="button-sa" onclick="handleInput(9)"> 9 </button> <br>
                     &nbsp;
                     <h2 class="h2-62" id="note">Not ready</h2>
+                    <br>
+                    <button id="input" class="button-sa" onclick="pauseBtn()"> Pause Game </button>
                 </div>
                 <!--
                 <div class="btn-AB" id=""></div>
