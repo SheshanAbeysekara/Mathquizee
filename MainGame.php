@@ -172,7 +172,9 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <div class="timerDisplay"></div>
                 </div>
             </div>
-            
+     </div>
+
+                
 
         <div class="gameboy">
             <div class="screen-cont">
