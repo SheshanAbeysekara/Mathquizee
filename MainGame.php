@@ -87,7 +87,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
                         clearInterval(timeeIntervel);
-                        gameTimer(timeleft);
+                        
                     }
                 });
                 
@@ -102,7 +102,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
                         clearInterval(timeeIntervel);
-                        gameTimer(timeleft);
+                        
                         
                     }
                 });
@@ -121,18 +121,18 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     var timeleft = 10;
     let timer = document.getElementById('time');
     timeeIntervel = setInterval(async function () {
-        $(".timerDisplay").attr(
-            "style",
-            "width:" + (timeleft) * 100 * 2.1 + "px"
-        );
+        //$(".timerDisplay").attr(
+        //    "style",
+        //    "width:" + (timeleft) * 100 * 2.1 + "px"
+        //);
         timeleft -= 1;
         timer.innerHTML = timeleft;
         if (timeleft == 0) {
             var wronganswer = new Audio('./audio/wrong.wav');
             wronganswer.play();
             clearInterval(timeeIntervel);
-            gameTimer(timeleft);
             newgame()
+            gameTimer()
         }
          }, 1000);
     }
