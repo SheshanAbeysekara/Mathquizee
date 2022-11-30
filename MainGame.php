@@ -86,6 +86,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                         newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
+                        clearInterval(timeeIntervel);
+                        gameTimer(timeleft);
                     }
                 });
                 
@@ -99,6 +101,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                         newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
+                        clearInterval(timeeIntervel);
+                        gameTimer(timeleft);
                         
                     }
                 });
@@ -106,7 +110,34 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 
             }
 
-        }   
+        }  
+
+
+
+
+        
+        function gameTimer() {
+    //call the function here
+    var timeleft = 10;
+    let timer = document.getElementById('time');
+    timeeIntervel = setInterval(async function () {
+        $(".timerDisplay").attr(
+            "style",
+            "width:" + (timeleft) * 100 * 2.1 + "px"
+        );
+        timeleft -= 1;
+        timer.innerHTML = timeleft;
+        if (timeleft == 0) {
+            var wronganswer = new Audio('./audio/wrong.wav');
+            wronganswer.play();
+            clearInterval(timeeIntervel);
+            gameTimer(timeleft);
+            newgame()
+        }
+         }, 1000);
+    }
+
+
 
 
         let startQuest = function(data) {
@@ -174,31 +205,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             </div>
         </div>
 
-        <script>
-
-            var timeleft = 10;
-            var downloadTimer = setInterval(function(){
-            if(timeleft <= 0){
-            clearInterval(downloadTimer);
-            var timeup = new Audio('./audio/timeup.wav');
-                timeup.play();
-                swal("Oh No!", "Your time is up :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
-                    if(confirmed) {
-                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
-                        nextquiz.play();
-                        startup();
-                        
-                        
-                    }
-                });
-                
-            } else {
-                document.getElementById("time").innerHTML = timeleft + " seconds";
-            }
-            timeleft -= 1;
-            }, 1000);
-                    
-        </script>
+        
 
         <!-- Timer Section -->
         <div class="leftSi">
@@ -294,7 +301,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
     <!--Main JS-->
     <script src="./AjaxFunctions.js"></script>
-    <script src="./GameGUI.js"></script>
+    <!-- <script src="./GameGUI.js"></script> -->
     <script src="./index.js"></script>
 
 
