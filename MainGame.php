@@ -106,28 +106,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 
             }
 
-            var timeleft = 10;
-            var downloadTimer = setInterval(function(){
-            if(timeleft <= 0){
-            clearInterval(downloadTimer);
-            var timeup = new Audio('./audio/timeup.wav');
-                timeup.play();
-                swal("Oh No!", "Your time is up :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
-                    if(confirmed) {
-                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
-                        nextquiz.play();
-                        newgame()
-                        var timeleft = 10;
-                        
-                    }
-                });
-                
-            } else {
-                document.getElementById("time").innerHTML = timeleft + " seconds";
-            }
-            timeleft -= 1;
-            }, 1000);
-                    }
+        }   
 
 
         let startQuest = function(data) {
@@ -194,6 +173,32 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 </div>
             </div>
         </div>
+
+        <script>
+
+            var timeleft = 10;
+            var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            var timeup = new Audio('./audio/timeup.wav');
+                timeup.play();
+                swal("Oh No!", "Your time is up :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
+                    if(confirmed) {
+                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
+                        nextquiz.play();
+                        startup();
+                        
+                        
+                    }
+                });
+                
+            } else {
+                document.getElementById("time").innerHTML = timeleft + " seconds";
+            }
+            timeleft -= 1;
+            }, 1000);
+                    
+        </script>
 
         <!-- Timer Section -->
         <div class="leftSi">
