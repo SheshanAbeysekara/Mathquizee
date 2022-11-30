@@ -120,10 +120,11 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     //call the function here
             var timeleft = 10;
             var downloadTimer = setInterval(function(){
-            if(timeleft == 0){
+            if(timeleft <= 0){
+                clearInterval(downloadTimer);
                 var timeup = new Audio('./audio/timeup.wav');
                     timeup.play();
-                    clearInterval(downloadTimer);
+                    
                     newgame()
                     gameTimer()
             } else {
