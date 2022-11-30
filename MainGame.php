@@ -88,6 +88,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 
             } else {
                 //note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+                var wronganswer = new Audio('./audio/wrong.wav');
+                wronganswer.play();
                 swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
