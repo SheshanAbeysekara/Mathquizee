@@ -118,24 +118,24 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
         
         function gameTimer() {
     //call the function here
-    var timeleft = 10;
-    let timer = document.getElementById('time');
-    var timeeIntervel = setInterval(async function () {
-        //$(".timerDisplay").attr(
-        //    "style",
-        //    "width:" + (timeleft) * 100 * 2.1 + "px"
-        //);
-        timeleft -= 1;
-        timer.innerHTML = timeleft;
-        if (timeleft == 0) {
-            var wronganswer = new Audio('./audio/wrong.wav');
-            wronganswer.play();
-            clearInterval(timeeIntervel);
-            newgame()
-            gameTimer()
-        }
-         }, 1000);
+            var timeleft = 10;
+            var downloadTimer = setInterval(function(){
+            if(timeleft == 0){
+                var timeup = new Audio('./audio/timeup.wav');
+                    timeup.play();
+                    clearInterval(downloadTimer);
+                    newgame()
+                    gameTimer()
+            } else {
+                document.getElementById("timer").innerHTML = timeleft + " seconds";
+            }
+            timeleft -= 1;
+            }, 1000);
+
     }
+
+
+    
 
 
 
