@@ -127,9 +127,9 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     timeup.play();
                     
                     newgame()
-                    gameTimer()
+                    
             } else {
-                document.getElementById("timer").innerHTML = timeleft + " seconds";
+                document.getElementById("time").innerHTML = timeleft + " seconds";
             }
             timeleft -= 1;
             }, 1000);
