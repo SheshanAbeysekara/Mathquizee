@@ -125,8 +125,9 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 clearInterval(downloadTimer);
                 var timeup = new Audio('./audio/timeup.wav');
                     timeup.play();
-                    
+
                     newgame()
+                    var timeleft = 10;
                     
             } else {
                 document.getElementById("time").innerHTML = timeleft + " seconds";
