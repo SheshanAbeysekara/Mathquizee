@@ -105,7 +105,28 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 
                 
             }
-        }
+
+            var timeleft = 10;
+            var downloadTimer = setInterval(function(){
+            if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            var timeup = new Audio('./audio/timeup.wav');
+                timeup.play();
+                swal("Oh No!", "Your time is up :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
+                    if(confirmed) {
+                        newgame()
+                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
+                        nextquiz.play();
+                        
+                    }
+                });
+                
+            } else {
+                document.getElementById("time").innerHTML = timeleft + " seconds";
+            }
+            timeleft -= 1;
+            }, 1000);
+                    }
 
 
         let startQuest = function(data) {
@@ -176,7 +197,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
         <!-- Timer Section -->
         <div class="leftSi">
             <div class="textContainer">
-                <span class="textConi">Time Left: <br><i id="time">0</i> Sec</span>
+                <span class="textConi">Time Left: <br><i id="time">0</i> </span>
                 <div class="containerY">
                     <div class="timerDisplay"></div>
                 </div>
