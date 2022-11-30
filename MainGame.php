@@ -91,6 +91,9 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
+                        var nextquiz = new Audio('./audio/nextquiz.wav');
+                        nextquiz.play();
+                        
                     }
                 });
                 
