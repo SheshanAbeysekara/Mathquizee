@@ -114,9 +114,10 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 timeup.play();
                 swal("Oh No!", "Your time is up :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
-                        newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
+                        newgame()
+                        var timeleft = 10;
                         
                     }
                 });
