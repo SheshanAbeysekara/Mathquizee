@@ -100,6 +100,7 @@ function confirmLogout() {
     });
 }
 
+/**
 function gameTimer(timeleft) {
     //call the function here
     let timer = document.getElementById('time');
@@ -122,6 +123,7 @@ function gameTimer(timeleft) {
         }
     }, 1000);
 }
+*/
 
 /**
  * Mouse Events
