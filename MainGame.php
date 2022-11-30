@@ -62,7 +62,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     <!--Crypto-JS CDN
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
-    
+
     <!--Importing Smile APIL Quiz functions-->
     <script src="quizenginge.js"></script>
 
@@ -73,7 +73,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
 <body class="notClickable">
 
-<script>
+<script src="quizenginge.js">
         startup();
     </script>
 
