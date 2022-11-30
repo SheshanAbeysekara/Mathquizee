@@ -64,7 +64,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
 
     <!--Importing Smile APIL Quiz functions-->
-    
+
     <script>
         var quest = "";
         var solution = -1;
@@ -164,7 +164,15 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             </div>
         </div>
 
-        
+        <!-- Timer Section -->
+        <div class="leftSi">
+            <div class="textContainer">
+                <span class="textConi">Time Left: <br><i id="time">0</i> Sec</span>
+                <div class="containerY">
+                    <div class="timerDisplay"></div>
+                </div>
+            </div>
+            
 
         <div class="gameboy">
             <div class="screen-cont">
