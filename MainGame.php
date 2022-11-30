@@ -72,6 +72,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
         let newgame = function(x) {
            
             startup();
+            gameTimer();
         }
         let handleInput = function(x) {
 
@@ -86,7 +87,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                         newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
-                        clearInterval(timeeIntervel);
+                        clearInterval(downloadTimer);
                         
                     }
                 });
@@ -101,7 +102,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                         newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
-                        clearInterval(timeeIntervel);
+                        clearInterval(downloadTimer);
                         
                         
                     }
@@ -118,8 +119,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
         
         function gameTimer() {
     //call the function here
-            var timeleft = 10;
-            var downloadTimer = setInterval(function(){
+            timeleft = 10;
+            downloadTimer = setInterval(function(){
             if(timeleft <= 0){
                 clearInterval(downloadTimer);
                 var timeup = new Audio('./audio/timeup.wav');
