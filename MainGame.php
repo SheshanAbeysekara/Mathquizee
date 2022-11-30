@@ -79,9 +79,13 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
             var note = document.getElementById("note");
             if (inp.value == solution) {
                 //note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+                var correctanswer = new Audio('./audio/correct.mp3');
+                correctanswer.play();
                 swal("Yaaaay!", "You are a MATH genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
+                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
+                        nextquiz.play();
                     }
                 });
                 
@@ -93,7 +97,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
-                        var nextquiz = new Audio('./audio/nextquiz.wav');
+                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
                         
                     }
