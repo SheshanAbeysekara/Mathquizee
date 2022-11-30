@@ -120,7 +120,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     //call the function here
     var timeleft = 10;
     let timer = document.getElementById('time');
-    timeeIntervel = setInterval(async function () {
+    var timeeIntervel = setInterval(async function () {
         //$(".timerDisplay").attr(
         //    "style",
         //    "width:" + (timeleft) * 100 * 2.1 + "px"
