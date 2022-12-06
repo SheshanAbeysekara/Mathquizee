@@ -241,7 +241,20 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 </div> -->
                 <button id="input" class="abutton" onclick="pauseBtn()"> Pause Game </button>
             </div>
-     </div>
+
+            <br> <br> 
+
+            <div style="margin-top: 1.4rem; padding:1rem !important" class="textContainer">
+                <div class="Prfilescard">
+                    <h3 style="margin-bottom: 18px;">Game Guidelines!!</h3> <br><br>
+                    <p class="TEXTp" style="align=left;"><b>You have 60 Seconds to get as many quizzes correct.</b></p> <br>
+                    <p class="TEXTp" style="align=left;"><b>Game will be over if you get 5/5 quizzes wrong.</b></p> <br>  
+                    <p class="TEXTp" style="align=left;"><b>click PAUSE GAME to pause the game.</b></p> <br>    
+                </div>
+            </div>  
+
+
+        </div>
 
                 
 
