@@ -203,9 +203,11 @@ if (isset($_SESSION['userid'])) {
                  <script src="https://accounts.google.com/gsi/client" async defer></script>
                 <div id="g_id_onload"
                   data-client_id="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com"
-                  data-login_uri="https://mathquizee.herokuapp.com/Includes/login.inc.php"
+                  
                   data-auto_prompt="false"
-                  data-onsuccess="onSignIn">
+                  
+                  data-callback="window.location='<?php echo $login_url; ?>'">
+                  
                   
                 </div>
                 <div class="g_id_signin"
