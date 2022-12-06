@@ -197,7 +197,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 <span class="textConi">Score Board:</span>
                 <div class="Prfilescard">
                     <br>  
-                    You have gained <i id="corrquiz">0</i> &nbsp; Points! 
+                    <p class="TEXTp"><b>You have gained <i id="corrquiz">0</i> &nbsp; Points! </b> </p>
                     
                     <br>  <br> <hr> <br> 
                     <p class="TEXTp"><b>You have <i id="wrongquiz">0</i>  / 5 &nbsp;  Wrong Quizes!</b> </p>
