@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
 
 	require_once("./UserLogin.classes.php");
 	/**
-	 * Creating a Object from the class UserLogin which gonna contain all the information the user inserterd when Login in	 
+	 * Creating a Object from the class UserLogin which will contain all the information the user inserterd when Login in	 
 	 */
 	$login = new UserLogin($con, $username, $pwd);
 	$login->initUser();
