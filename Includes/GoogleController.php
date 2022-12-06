@@ -1,12 +1,12 @@
 <?php
 
 $Gclient = new Google_Client();
-$Gclient-> setClientId("811203755210-t5s1egd1863a5mh2dc6e53rletttv0ii.apps.googleusercontent.com");
-$Gclient->setClientSecret("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");
+$Gclient-> setClientId("559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com");
+$Gclient->setClientSecret("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");
 
-$Gclient->setApplicationName("Inter_galactica");
+$Gclient->setApplicationName("Mathquizee");
 
-$Gclient->setRedirectUri("https://inter-galactica.herokuapp.com/Includes/login.inc.php");
+$Gclient->setRedirectUri("https://mathquizee.herokuapp.com/Includes/login.inc.php");
 $Gclient->addScope("https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email");
 
 $login_url = $Gclient->createAuthUrl();
