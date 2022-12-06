@@ -106,9 +106,6 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
 
 
                 
-                var wronganswer = new Audio('./audio/wrong.wav');
-                wronganswer.play();
-                
                 var WnewScore = document.getElementById("wrongquiz").innerHTML;
                 var Wscorevalue = parseInt(WnewScore,10) + 1;
                 document.getElementById("wrongquiz").innerHTML = Wscorevalue;
@@ -130,7 +127,12 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     }
                 });
 
-                }else { swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
+                }else { 
+                    
+                    var wronganswer = new Audio('./audio/wrong.wav');
+                        wronganswer.play();
+                        
+                    swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         
                         newgame()
