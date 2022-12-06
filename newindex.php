@@ -329,7 +329,7 @@ if (isset($_SESSION['userid'])) {
 
     <!-- Javascript file -->
 
-    <script src="app.js"></script>
+    <script src="newindex.js"></script>
 
     <?php
   if (isset($_GET['error'])) {
@@ -366,7 +366,7 @@ if (isset($_SESSION['userid'])) {
       container.classList.remove("sign-up-mode");
     });
   </script>
-  <script src="./index.js"></script>
+  
   
   </body>
 </html>
