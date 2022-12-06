@@ -131,7 +131,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     
                     var wronganswer = new Audio('./audio/wrong.wav');
                         wronganswer.play();
-                        
+
                     swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         
@@ -200,7 +200,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     You have gained <i id="corrquiz">0</i> &nbsp; Points! 
                     
                     <br>  <br> <hr> <br> 
-                    You had <i id="wrongquiz">0</i> &nbsp;  Wrong Quizes!
+                    You have <i id="wrongquiz">0</i> &nbsp; / 5 &nbsp;  Wrong Quizes!
                     
                     <br> <br>
                 </div>
