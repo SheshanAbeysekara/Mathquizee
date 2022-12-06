@@ -206,7 +206,7 @@ if (isset($_SESSION['userid'])) {
                   
                   data-auto_prompt="false"
                   
-                  data-callback="window.location='<?php echo $login_url; ?>'">
+                  data-callback="onSignIn">
                   
                   
                 </div>
