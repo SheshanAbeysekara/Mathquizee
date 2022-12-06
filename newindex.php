@@ -213,7 +213,7 @@ if (isset($_SESSION['userid'])) {
                   data-text="sign_in_with"
                   data-shape="rectangular"
                   data-logo_alignment="left">
-                </div> --> 
+                </div> 
 
                 <div style="display: flex;">
                     <div class="google-btn" style="margin-top: 1.8rem;">
@@ -221,7 +221,7 @@ if (isset($_SESSION['userid'])) {
                         <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
                       </div>
                   <p onclick="window.location='<?php echo $login_url; ?>'" class="btn-text" type="button"><b>Sign in with google</b></p>
-                </div>
+                </div> --> 
                   
                 <p class="text">
                   A Project by Sheshan Abeysekara
