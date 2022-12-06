@@ -118,7 +118,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     var timeup = new Audio('./audio/timeup.wav');
                         timeup.play();
 
-                    swal("Sorry!", "You have got 5 quizzes wrong", "error", {button: "New Game",}).then(function(confirmed) {
+                    swal("GAME OVERRR", "You have got 5 quizzes wrong", "error", {button: "Try a New Game",}).then(function(confirmed) {
                     if(confirmed) {
                         
                         
