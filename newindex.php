@@ -29,7 +29,7 @@ if (isset($_SESSION['userid'])) {
 
 
     <!--StyleSheet-->
-  <link rel="stylesheet" href="CSS/style.css" type="text/css" />
+  
   <link rel="shortcut icon" href="Images/Icon.jpg">
     <link rel="stylesheet" href="newindexstyle.css" />
 
@@ -200,7 +200,7 @@ if (isset($_SESSION['userid'])) {
 
                 <div class="g-signin2" data-onsuccess="onSignIn"><b>Sign in with google</b></div> <br>
 
-                <script src="https://accounts.google.com/gsi/client" async defer></script>
+                <!-- <script src="https://accounts.google.com/gsi/client" async defer></script>
                 <div id="g_id_onload"
                   data-client_id="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com"
                   data-login_uri="https://mathquizee.herokuapp.com/Includes/login.inc.php"
@@ -213,7 +213,7 @@ if (isset($_SESSION['userid'])) {
                   data-text="sign_in_with"
                   data-shape="rectangular"
                   data-logo_alignment="left">
-                </div>
+                </div> --> 
 
                 <div style="display: flex;">
                     <div class="google-btn" style="margin-top: 1.8rem;">
