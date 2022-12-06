@@ -22,9 +22,9 @@ if (isset($_SESSION['userid'])) {
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     <meta name="google-signin-client_id" content="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com">
-    
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+     <!--<meta name="google-signin-client_id" content="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer> </script> 
+    <script src="https://accounts.google.com/gsi/client" async defer></script> -->
     <title>MATHQUIZEE</title> 
     <link rel="stylesheet" href="newindexstyle.css" />
 
@@ -194,6 +194,21 @@ if (isset($_SESSION['userid'])) {
                 <h5>OR</h5> <br>
 
                 <div class="g-signin2" data-onsuccess="onSignIn"><b>Sign in with google</b></div> <br>
+
+                <script src="https://accounts.google.com/gsi/client" async defer></script>
+                <div id="g_id_onload"
+                  data-client_id="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com"
+                  data-login_uri="https://mathquizee.herokuapp.com/Includes/login.inc.php"
+                  data-auto_prompt="false">
+                </div>
+                <div class="g_id_signin"
+                  data-type="standard"
+                  data-size="large"
+                  data-theme="outline"
+                  data-text="sign_in_with"
+                  data-shape="rectangular"
+                  data-logo_alignment="left">
+                </div>
                   
                 <p class="text">
                   A Project by Sheshan Abeysekara
