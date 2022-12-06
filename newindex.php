@@ -198,13 +198,15 @@ if (isset($_SESSION['userid'])) {
 
                 <h5>OR</h5> <br>
 
-                <!-- <div class="g-signin2" data-onsuccess="onSignIn"><b>Sign in with google</b></div> <br>
+                <!-- <div class="g-signin2" data-onsuccess="onSignIn"><b>Sign in with google</b></div> <br> -->
 
                  <script src="https://accounts.google.com/gsi/client" async defer></script>
                 <div id="g_id_onload"
                   data-client_id="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com"
                   data-login_uri="https://mathquizee.herokuapp.com/Includes/login.inc.php"
-                  data-auto_prompt="false">
+                  data-auto_prompt="false"
+                  data-onsuccess="onSignIn">
+                  
                 </div>
                 <div class="g_id_signin"
                   data-type="standard"
@@ -214,6 +216,8 @@ if (isset($_SESSION['userid'])) {
                   data-shape="rectangular"
                   data-logo_alignment="left">
                 </div> 
+
+                <!--
 
                 <div style="display: flex;">
                     <div class="google-btn" style="margin-top: 1.8rem;">
@@ -347,14 +351,14 @@ if (isset($_SESSION['userid'])) {
       </div>
     </main>
 
-    <!-- Google Authentication Script to get user info
+    <!-- Google Authentication Script to get user info -->
     <script>
       function onSignIn(googleUser) {
         // get user profile information
         console.log(googleUser.getBasicProfile())
         alert("Hello There"+ googleUser.getName(),"welcome to MathQuizee");
       }
-    </script> -->
+    </script> 
 
     <!-- Javascript file -->
 
