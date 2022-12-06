@@ -80,13 +80,14 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
+**/
 async function pauseBtn() {
     power.classList.add('blurOut');
     await sleep(50);   //await for half a MS to blur the screen and popup the JS alert
     alert('\t Game is Paused! \n Click the "OK" Button to resume the game play!');
     power.classList.remove('blurOut');
 }
-*/
+
 
 function confirmLogout() {
     swal({
