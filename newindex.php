@@ -202,11 +202,8 @@ if (isset($_SESSION['userid'])) {
 
                  <script src="https://accounts.google.com/gsi/client" async defer></script>
                 <div id="g_id_onload"
-                  data-client_id="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com"
-                  
-                  data-auto_prompt="false"
-                  
-                  data-callback="onSignIn">
+                  data-client_id="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com"                
+                  data-callback="handleCredentialResponse">
                   
                   
                 </div>
@@ -355,12 +352,19 @@ if (isset($_SESSION['userid'])) {
 
     <!-- Google Authentication Script to get user info -->
     <script>
-      function onSignIn(googleUser) {
-        // get user profile information
-        console.log(googleUser.getBasicProfile())
-        alert("Hello There"+ googleUser.getName(),"welcome to MathQuizee");
+      function handleCredentialResponse(response) {
+        // decodeJwtResponse() is a custom function defined by you
+        // to decode the credential response.
+        const responsePayload = decodeJwtResponse(response.credential);
+
+        console.log("ID: " + responsePayload.sub);
+        console.log('Full Name: ' + responsePayload.name);
+        console.log('Given Name: ' + responsePayload.given_name);
+        console.log('Family Name: ' + responsePayload.family_name);
+        console.log("Image URL: " + responsePayload.picture);
+        console.log("Email: " + responsePayload.email);
       }
-    </script> 
+    </script>
 
     <!-- Javascript file -->
 
