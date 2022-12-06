@@ -217,8 +217,8 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                             echo '<img src="' . $rowW['img'] . '" alt="Error Loading the Image" class="avatar">';
                             echo ' <h3 style="margin-bottom: 18px;">' . $rowW['name'] . '</h3>';
                             echo '<div style="margin-top: 0px;">';
-                            echo ' <p class="TEXTp"><b><i class="fa-solid fa-circle-envelope"></i> Email: </b>' . $rowW['email'] . '</p>';
-        
+                            echo ' <p class="TEXTp"><b><i class="fa-solid fa-circle-envelope"></i> Email: </b>' . $rowW['email'] . '</p>
+                            <p class="TEXTp"><b><i class="fa-solid fa-circle-phone"></i> Contact Number: </b>' . $rowW['contact'] . '</p>' ;
                             echo ' </div>';
                         }
                     } else {
