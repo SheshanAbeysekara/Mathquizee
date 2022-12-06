@@ -91,7 +91,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 var scorevalue = parseInt(newScore,10) + 10;
                 document.getElementById("corrquiz").innerHTML = scorevalue;
 
-                swal("CORRECT ANSWER!!!!", "You are a MATH genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
+                swal("CORRECT ANSWER!!!!", "10 Points to the Math Genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
@@ -200,7 +200,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     <p class="TEXTp"><b>You have gained <i id="corrquiz">0</i> &nbsp; Points! </b> </p>
                     
                     <br>  <br> <hr> <br> 
-                    <p class="TEXTp"><b>You have <i id="wrongquiz">0</i>  / 5 &nbsp;  Wrong Quizes!</b> </p>
+                    <p class="TEXTp"><b>You have <i id="wrongquiz">0</i>  / 5 &nbsp;  Wrong Quizzes!</b> </p>
                     
                     <br> <br>
                 </div>
