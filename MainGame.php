@@ -91,7 +91,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                 var scorevalue = parseInt(newScore,10) + 10;
                 document.getElementById("corrquiz").innerHTML = scorevalue;
 
-                swal("Yaaaay!", "You are a MATH genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
+                swal("CORRECT ANSWER!!!!", "You are a MATH genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
