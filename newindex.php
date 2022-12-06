@@ -26,6 +26,11 @@ if (isset($_SESSION['userid'])) {
     <script src="https://apis.google.com/js/platform.js" async defer> </script> 
     <script src="https://accounts.google.com/gsi/client" async defer></script> -->
     <title>MATHQUIZEE</title> 
+
+
+    <!--StyleSheet-->
+  <link rel="stylesheet" href="CSS/style.css" type="text/css" />
+  <link rel="shortcut icon" href="Images/Icon.jpg">
     <link rel="stylesheet" href="newindexstyle.css" />
 
     <!--FontAwsome CDN-->
@@ -208,6 +213,14 @@ if (isset($_SESSION['userid'])) {
                   data-text="sign_in_with"
                   data-shape="rectangular"
                   data-logo_alignment="left">
+                </div>
+
+                <div style="display: flex;">
+                    <div class="google-btn" style="margin-top: 1.8rem;">
+                      <div class="google-icon-wrapper">
+                        <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
+                      </div>
+                  <p onclick="window.location='<?php echo $login_url; ?>'" class="btn-text" type="button"><b>Sign in with google</b></p>
                 </div>
                   
                 <p class="text">
