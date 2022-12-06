@@ -23,7 +23,7 @@ if (isset($_SESSION['userid'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <meta name="google-signin-client_id" content="559435595836-q4780alvfibks9gkit11p81anjndak5k.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer> </script> -->
+    <script src="https://apis.google.com/js/platform.js" async defer> </script> --> 
     <title>MATHQUIZEE</title> 
     <link rel="stylesheet" href="newindexstyle.css" />
 
@@ -192,14 +192,7 @@ if (isset($_SESSION['userid'])) {
 
                 <h5>OR</h5> <br>
 
-                <div style="display: flex;">
-                  <div class="google-btn" style="margin-top: 1.8rem;">
-                    <div class="google-icon-wrapper">
-                      <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-                    </div>
-                    <p onclick="window.location='<?php echo $login_url; ?>'" class="btn-text" type="button"><b>Sign in with google</b></p>
-                  </div>
-                </div>
+                <div class="g-signin2" data-onsuccess="window.location='<?php echo $login_url; ?>'"><b>Sign in with google</b></div> <br>
                   
                 <p class="text">
                   A Project by Sheshan Abeysekara
