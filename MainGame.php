@@ -115,7 +115,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     var timeup = new Audio('./audio/timeup.wav');
                         timeup.play();
 
-                    swal("GAME OVERRR", "You have got 5 quizzes wrong", "error", {button: "Try a New Game",}).then(function(confirmed) {
+                    swal("GAME OVERRR", "You have got 5/5 quizzes wrong", "error", {button: "Try a New Game",}).then(function(confirmed) {
                     if(confirmed) {
                         
                         
@@ -200,7 +200,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     You have gained <i id="corrquiz">0</i> &nbsp; Points! 
                     
                     <br>  <br> <hr> <br> 
-                    You have <i id="wrongquiz">0</i> &nbsp; / 5 &nbsp;  Wrong Quizes!
+                    <p class="TEXTp"><b>You have <i id="wrongquiz">0</i>  / 5 &nbsp;  Wrong Quizes!</b> </p>
                     
                     <br> <br>
                 </div>
