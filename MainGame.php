@@ -63,108 +63,117 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 
-    <!--Importing Smile APIL Quiz functions-->
+    <!--Importing Smile API Quiz functions-->
 
-    <script>
+    <script> 
+
+        
         var quest = "";
         var solution = -1;
 
         let newgame = function(x) {
            
             startup();
-            gameTimer();
+            
         }
+        
         let handleInput = function(x) {
 
             let inp = document.getElementById("input");
             var note = document.getElementById("note");
-            if (inp.value == solution) {
-                //note.innerHTML = 'Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+            
+             if (inp.value == solution) {
+                
                 var correctanswer = new Audio('./audio/correct.mp3');
                 correctanswer.play();
+
+                var newScore = document.getElementById("corrquiz").innerHTML;
+                var scorevalue = parseInt(newScore,10) + 10;
+                document.getElementById("corrquiz").innerHTML = scorevalue;
+
                 swal("Yaaaay!", "You are a MATH genius!", "success", {button: "Next Quiz",}).then(function(confirmed) {
                     if(confirmed) {
                         newgame()
                         var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
                         nextquiz.play();
-                        clearInterval(downloadTimer);
+                        
                         
                     }
                 });
                 
                 
             } else {
-                //note.innerHTML = 'NOT Correct! -  <button class="button-54" onClick="newgame()" >New game?</button>';
+
+
+                
                 var wronganswer = new Audio('./audio/wrong.wav');
                 wronganswer.play();
-                swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
+                
+                var WnewScore = document.getElementById("wrongquiz").innerHTML;
+                var Wscorevalue = parseInt(WnewScore,10) + 1;
+                document.getElementById("wrongquiz").innerHTML = Wscorevalue;
+
+                if (Wscorevalue==5){
+
+                    var timeup = new Audio('./audio/timeup.wav');
+                        timeup.play();
+
+                    swal("Sorry!", "You have got 5 quizzes wrong", "error", {button: "New Game",}).then(function(confirmed) {
                     if(confirmed) {
-                        newgame()
-                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
-                        nextquiz.play();
-                        clearInterval(downloadTimer);
+                        
+                        
+                        window.location.reload();
+
+                        
                         
                         
                     }
                 });
+
+                }else { swal("OOPS!", "Wrong Answer :(", "error", {button: "Next Quiz",}).then(function(confirmed) {
+                    if(confirmed) {
+                        
+                        newgame()
+                        var nextquiz = new Audio('./audio/obtainPowerUp.mp3');
+                        nextquiz.play();
+
+                        
+                        
+                        
+                    }
+                });
+                }
+                                            
                 
                 
             }
 
         }  
-
-
-
-
-        
-        
-    //call the function here
-            var timeleft = 10;
-            var downloadTimer = setInterval(function(){
-            if(timeleft <= 0){
-                clearInterval(downloadTimer);
-                var timeup = new Audio('./audio/timeup.wav');
-                    timeup.play();
-
-                    newgame()
-                    var timeleft = 10;
-                    
-            } else {
-                document.getElementById("time").innerHTML = timeleft + " seconds";
+       
+    
+            let startQuest = function(data) {
+                var parsed = JSON.parse(data);
+                quest = parsed.question;
+                solution = parsed.solution;
+                let img = document.getElementById("quest");
+                img.src = quest;
+                let note = document.getElementById("note");
+                note.innerHTML = "Quiz is ready.";
             }
-            timeleft -= 1;
-            }, 1000);
 
-    
+            let fetchText = async function() {
+                let response = await fetch('https://marcconrad.com/uob/smile/api.php');
+                let data = await response.text();
+                startQuest(data);
+            }
+
+            let startup = function() {
+                fetchText();
+            }
 
 
-    
-
-
-
-
-        let startQuest = function(data) {
-            var parsed = JSON.parse(data);
-            quest = parsed.question;
-            solution = parsed.solution;
-            let img = document.getElementById("quest");
-            img.src = quest;
-            let note = document.getElementById("note");
-            note.innerHTML = "Quiz is ready.";
-        }
-
-        let fetchText = async function() {
-            let response = await fetch('https://marcconrad.com/uob/smile/api.php');
-            let data = await response.text();
-            startQuest(data);
-        }
-
-        let startup = function() {
-            fetchText();
-        }
-
+        
 </script>
-
 
 
 
@@ -176,15 +185,26 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
         startup();
     </script>
 
+<script src="Timer.js"> </script>
+
     <div class="container-fluid">
 
     <div class="rightSi">
-            <!-- <div class="textContainer">
-                <span class="textConi">Time Left: <br><i id="time">0</i> Sec</span>
-                <div class="containerY">
-                    <div class="timerDisplay"></div>
+        
+            <div class="textContainer">
+                <span class="textConi">Score Board:</span>
+                <div class="Prfilescard">
+                    <br>  
+                    You have gained <i id="corrquiz">0</i> &nbsp; Points! 
+                    
+                    <br>  <br> <hr> <br> 
+                    You had <i id="wrongquiz">0</i> &nbsp;  Wrong Quizes!
+                    
+                    <br> <br>
                 </div>
-            </div> -->
+            </div> 
+
+
             <div style="margin-top: 1.4rem; padding:1rem !important" class="textContainer">
                 <div class="Prfilescard">
                     <?php
@@ -214,9 +234,10 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
         <div class="leftSi">
             <div class="textContainer">
                 <span class="textConi">Time Left: <br><i id="time">0</i> </span>
-                <div class="containerY">
-                    <div class="timerDisplay"></div>
-                </div>
+                <!--<div class="containerY">
+                     <div class="timerDisplay"></div> 
+                </div> -->
+                <button id="input" class="abutton" onclick="pauseBtn()"> Pause Game </button>
             </div>
      </div>
 
@@ -263,7 +284,7 @@ if (isset($_SESSION['userid']) && ($_SESSION['userTY'] == "GP")) {
                     &nbsp;
                     <h2 class="h2-62" id="note">Not ready</h2>
                     <br>
-                    <button id="input" class="button-sa" onclick="pauseBtn()"> Pause Game </button>
+                    
                 </div>
                 <!--
                 <div class="btn-AB" id=""></div>

@@ -50,14 +50,15 @@ GetUserData().then(response => {
  */
 async function main() {
     GameEngingObj = new GameEngine(GameUserData, parseInt(GameUserData.Xp), parseInt(GameUserData.level), parseInt(GameData.CurentLevel.time_allocated), parseInt(GameData.CurentLevel.PlusScore), parseInt(GameData.CurentLevel.MinusScore));   //Player details as a object/ Score/ Lavel 
-    /** updateScore(GameEngingObj.score); */
+    /** updateScore(GameEngingObj.score); 
     clearInterval(timeeIntervel);
-    gameTimer(GameEngingObj.time);
+    gameTimer(GameEngingObj.time);*/
     /** currentGame = await GameEngingObj.nextMathImageGame(); */
     /** startGameAudioP2.play(); */
     /** ImagURLQuestion(currentGame);*/
 }
 
+/**
 function updateScore(score) {
     scoreEl.innerHTML = score;
     XpUser.innerHTML = "<b><i class='fa-solid fa-star'></i> XP: </b>" + score;
@@ -85,6 +86,7 @@ async function pauseBtn() {
     alert('\t Game is Paused! \n Click the "OK" Button to resume the game play!');
     power.classList.remove('blurOut');
 }
+*/
 
 function confirmLogout() {
     swal({
@@ -99,6 +101,7 @@ function confirmLogout() {
         }
     });
 }
+
 
 /**
 function gameTimer(timeleft) {
