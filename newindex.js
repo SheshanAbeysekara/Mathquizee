@@ -42,8 +42,8 @@ bullets.forEach((bullet) => {
 
 
 /**
- * The tooltip element provides more information about each input field, which is useful for enhancing the user
- * experience during platform sign-up.
+ * The tooltip elemnt helps to add more information about the each element, That would be useful to increase the User
+ * experience when sign-up to the system
  * Reference: 
  * https://stackoverflow.com/questions/1333546/how-can-i-display-a-tooltip-message-on-hover-using-jquery
  */

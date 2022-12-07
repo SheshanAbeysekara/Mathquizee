@@ -1,4 +1,3 @@
-<!--  https://github.com/googleapis/google-api-php-client/ -->
 <?php
 
 $Gclient = new Google_Client();

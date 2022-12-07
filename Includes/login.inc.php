@@ -1,5 +1,3 @@
-<!--  https://github.com/googleapis/google-api-php-client/ -->
-
 <?php
 require_once("../DataBase/config.php");
 
