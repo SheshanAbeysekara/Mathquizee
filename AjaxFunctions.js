@@ -13,22 +13,3 @@ async function GetUserData() {
     });
     return result;
 }
-
-/**
- * A Project by Sheshan Abeysekara for Computer Integrated Module of UOB. Registration ID: 2211344
- * GetGameData(level) function makes an asynchronous request to the GameData.json file and wait for the output to get 
- * recived and then return the user data as a JSON string, The JSON file is used to store the Game data becuase it's way faster, and simply the Admin
- * can chnage the game details within the JSON file
- * @param {*} level 
- * @returns the Game data corespond to a particular user's Level 
- */
-async function GetGameData(clevel) {
-    var result = await fetch('./GameData.json')
-        .then((response) => {
-            return response.json();
-        })
-        .then((myJson) => {
-            GameData = new Levels(myJson.Data, clevel);     //If the level changes we'll just cteate a new Level object and assign it t othe same variable
-        });
-    return result;
-}

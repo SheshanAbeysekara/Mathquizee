@@ -4,8 +4,8 @@
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `heroku_764a5db4e5102c2`
--- Author: Buddhi Dhananjaya
+-- 
+-- Author: Sheshan Abeysekara
 --
 
 -- --------------------------------------------------------
