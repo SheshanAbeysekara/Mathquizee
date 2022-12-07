@@ -1,4 +1,5 @@
-//USER Cookie
+//USER Cookie.
+//A Project by Sheshan Abeysekara for Computer Integrated Module of UOB. Registration ID: 2211344
 //examples from: https://www.w3schools.com/js/js_cookies.asp
 
 function setCookie(exdays) {

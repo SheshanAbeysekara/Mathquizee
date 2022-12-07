@@ -1,4 +1,5 @@
 /**
+ * A Project by Sheshan Abeysekara for Computer Integrated Module of UOB. Registration ID: 2211344
  * Selecting different elements from the HTML DOM 
  */
 const scoreEl = document.querySelector('#scoreEl');
