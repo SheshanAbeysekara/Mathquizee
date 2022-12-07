@@ -1,3 +1,5 @@
+//A Project by Sheshan Abeysekara for Computer Integrated Module of UOB. Registration ID: 2211344
+// This JS file handles all event-driven functions related to the sign-in OR sign-up screen.
 const inputs = document.querySelectorAll(".input-field");
 const toggle_btn = document.querySelectorAll(".toggle");
 const main = document.querySelector("main");
