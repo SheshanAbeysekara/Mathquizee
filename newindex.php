@@ -87,7 +87,7 @@ if (isset($_SESSION['userid'])) {
     const validateEmail = async () => {
       var email = document.getElementById("email").value;
       try {
-        var url = "http://apilayer.net/api/check?access_key=e4bfccb27a838acc91c7bf0e8957713f&email=" + email
+        var url = "http://apilayer.net/api/check?access_key=vvzPku9U7QySGkG7CtHM6GRSKBLWklBC&email=" + email
         const resp = await axios.get(url);
         return resp;
       } catch (err) {
@@ -100,7 +100,7 @@ if (isset($_SESSION['userid'])) {
     const validatePhone = async () => {
       var CPno = document.getElementById("contact").value;
       try {
-        let url = "https://numlookupapi.com/api/validate/" + CPno+"?apikey=pLWWIdzxTymJ9PSs7WQfg3KDOqMFv4EMgI7MLv8O";
+        let url = "https://numlookupapi.com/api/validate/" + CPno+"?apikey=tI0qtNVrKzEWZFPJPMwzbKSpxQK0WsfLw9gu7uRT";
         const resp = await axios.get(url);
         return resp.data;
       } catch (err) {
